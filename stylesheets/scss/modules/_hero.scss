@@ -1,0 +1,37 @@
+.hero {
+	width: 100%;
+	height: 600px;
+	height: 100vh;
+	min-height: 600px;
+	display: table;
+	text-align: center;
+
+	background: linear-gradient(197deg, #05cf9b, #0c78ed, #ed0ccb);
+	background-size: 600% 600%;
+
+	// -webkit-animation: AnimationName 10s ease infinite;
+	// -moz-animation: AnimationName 10s ease infinite;
+	// animation: AnimationName 10s ease infinite;
+
+	@-webkit-keyframes AnimationName {
+	    0%{background-position:55% 0%}
+	    50%{background-position:46% 100%}
+	    100%{background-position:55% 0%}
+	}
+	@-moz-keyframes AnimationName {
+	    0%{background-position:55% 0%}
+	    50%{background-position:46% 100%}
+	    100%{background-position:55% 0%}
+	}
+	@keyframes AnimationName { 
+	    0%{background-position:55% 0%}
+	    50%{background-position:46% 100%}
+	    100%{background-position:55% 0%}
+	}
+
+	&__title {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+}
