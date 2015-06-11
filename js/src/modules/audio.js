@@ -8,6 +8,7 @@ app.audio = (function($){
 	function init(){
 		playFacts = setInterval( function() {getAudioFiles(audioFiles)},10000);
 		pauseFacts();
+		getTheFiles();
 	}
 
 	var audioFiles = [];
@@ -42,6 +43,32 @@ app.audio = (function($){
 			window.clearTimeout(playFacts);
 			console.log('facts have been paused');
 		});
+	}
+
+	function getTheFiles() {
+
+		var _getAllFilesFromFolder = function(dir) {
+
+		    var filesystem = require('fs');
+		    var results = [];
+
+		    filesystem.readdirSync(dir).forEach(function(file) {
+
+		        file = dir+'/'+file;
+		        var stat = filesystem.statSync(file);
+
+		        if (stat && stat.isDirectory()) {
+		            results = results.concat(_getAllFilesFromFolder(file))
+		        } else results.push(file);
+
+		    });
+		    console.log(results);
+		    return results;
+
+		};
+
+		_getAllFilesFromFolder('../../audio/');
+	
 	}
 
 	/* Document ready

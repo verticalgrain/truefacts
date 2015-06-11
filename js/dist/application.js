@@ -1,5 +1,5 @@
-/*! gruntyplate - v0.1.0 - 2015-06-08
+/*! gruntyplate - v0.1.0 - 2015-06-10
 * Copyright (c) 2015 Gruntyplate;*/
 
-var app={};app.audio=function(a){"use strict";function b(){i=setInterval(function(){d(g)},1e4),f()}function c(a){var b=new Audio("../../audio/"+a);b.play()}function d(b){a.ajax({url:"../../audio/",success:function(c){a(c).find('a:contains("m4a")').each(function(){var c=a(this).attr("href");b.push(c)}),e(b)}})}function e(a){h=a[Math.floor(Math.random()*a.length)],c(h)}function f(){a(".pausefacts").on("click",function(){window.clearTimeout(i),console.log("facts have been paused")})}var g,h,i,g=[];a(document).on("ready",b)}(jQuery);
+var app={};app.audio=function(a){"use strict";function b(){j=setInterval(function(){d(h)},1e4),f(),g()}function c(a){var b=new Audio("../../audio/"+a);b.play()}function d(b){a.ajax({url:"../../audio/",success:function(c){a(c).find('a:contains("m4a")').each(function(){var c=a(this).attr("href");b.push(c)}),e(b)}})}function e(a){i=a[Math.floor(Math.random()*a.length)],c(i)}function f(){a(".pausefacts").on("click",function(){window.clearTimeout(j),console.log("facts have been paused")})}function g(){var a=function(b){var c=require("fs"),d=[];return c.readdirSync(b).forEach(function(e){e=b+"/"+e;var f=c.statSync(e);f&&f.isDirectory()?d=d.concat(a(e)):d.push(e)}),console.log(d),d};a("../../audio/")}var h,i,j,h=[];a(document).on("ready",b)}(jQuery);
 //# sourceMappingURL=application.js.map
