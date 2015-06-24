@@ -8,7 +8,7 @@ app.audio = (function($){
 	playFacts;
 
 	function init(){
-		var ding = new Audio('../audio/ding.mp3');
+		var ding = new Audio('audio/ding.mp3');
 		ding.volume = 0.2;
 		ding.play();
 		getAudioFilesJson(audioFiles);
