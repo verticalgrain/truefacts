@@ -15,9 +15,10 @@ app.audio = (function($){
 	var audioFiles = [];
 
 	function playAudio(audioFile) {
-		var audio = new Audio('../../audio/'+audioFile);
+		var audio = new Audio('../audio/'+audioFile);
 		audio.play();
 	}
+
 
 	function getAudioFiles(audioSources) {
 		$.ajax({
@@ -45,8 +46,6 @@ app.audio = (function($){
 
 		});
 	}
-
-
 
 
 	function chooseRandomAudio(audioSources) {
