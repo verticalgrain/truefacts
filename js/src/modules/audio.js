@@ -2,22 +2,28 @@ app.audio = (function($){
 	'use strict';
 
 	var audioFiles,
+	audio,
+	ding,
 	rand,
 	playFacts;
 
 	function init(){
-		playAudio('ding.mp3');
+		var ding = new Audio('../audio/ding.mp3');
+		ding.volume = 0.2;
+		ding.play();
 		getAudioFilesJson(audioFiles);
-		playFacts = setInterval( function() {getAudioFilesJson(audioFiles)},20000);
+		playFacts = setInterval( function() {getAudioFilesJson(audioFiles)},30000);
 		pauseFacts();
 	}
 
 	var audioFiles = [];
 
 	function playAudio(audioFile) {
-		var audio = new Audio('../../audio/'+audioFile);
+		var audio = new Audio('../audio/'+audioFile);
+		// audio.volume = 0.8;
 		audio.play();
 	}
+
 
 	function getAudioFiles(audioSources) {
 		$.ajax({
@@ -45,8 +51,6 @@ app.audio = (function($){
 
 		});
 	}
-
-
 
 
 	function chooseRandomAudio(audioSources) {
