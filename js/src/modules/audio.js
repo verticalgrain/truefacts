@@ -19,7 +19,7 @@ app.audio = (function($){
 	var audioFiles = [];
 
 	function playAudio(audioFile) {
-		var audio = new Audio('../audio/'+audioFile);
+		var audio = new Audio('audio/'+audioFile);
 		// audio.volume = 0.8;
 		audio.play();
 	}
