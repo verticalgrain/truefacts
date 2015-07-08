@@ -1,5 +1,5 @@
-/*! gruntyplate - v0.1.0 - 2015-06-24
+/*! gruntyplate - v0.1.0 - 2015-07-08
 * Copyright (c) 2015 Gruntyplate;*/
 
-var app={};app.audio=function(a){"use strict";function b(){var a=new Audio("audio/ding.mp3");a.volume=.2,a.play(),d(g),i=setInterval(function(){d(g)},3e4),f()}function c(a){var b=new Audio("audio/"+a);b.play()}function d(b){a.getJSON("json/audiofiles.json",function(c){a.each(c.audiofiles,function(a,c){b.push(c.filename)}),e(b)})}function e(a){h=a[Math.floor(Math.random()*a.length)],c(h)}function f(){a(".pausefacts").on("click",function(){window.clearTimeout(i)})}var g,h,i,g=[];a(document).on("ready",b)}(jQuery);
+var app={};app.audio=function(a){"use strict";function b(){var a=new Audio("audio/ding.mp3");a.volume=.2,a.play(),c(f),h=setInterval(function(){c(f)},i)}function c(b){a.getJSON("json/audiofiles.json",function(c){a.each(c.audiofiles,function(a,c){b.push(c.filename)}),d(b)})}function d(a){g=a[Math.floor(Math.random()*a.length)],e(g)}function e(b){a("body").removeClass("is-progressing"),a("body").addClass("is-progressing");var c=new Audio("audio/"+b);c.play(),a(".pausefacts").on("click",function(){a("body").toggleClass("is-paused"),c.pause()})}var f,g,h,i;i=4e4;var f=[];a(document).on("ready",b)}(jQuery);
 //# sourceMappingURL=application.js.map
